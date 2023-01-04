@@ -7,27 +7,158 @@
 
 import SwiftUI
 
+
+
 struct PostCell: View {
     
-    let post : Post = Post(user: user,
-                           place: "태초마을",
-                           imageURLList: ["https://w.namu.la/s/d595655a6bb0f3c9c6c863f364aafd0d6f4193e2afa56d28e187d031e3139121752cee5bb1401602eb2f5b477918e982968f17bba9d3ef35e077ae274a3525705ac704076f6686463ba51d8debebd861ea4baf6b18523a7117e6548cf8455499",
-                                          "https://w.namu.la/s/3acc6c7219ef3168c28202feaa574d04ca5eca3ee80ad179df07f2c031417ccfd60126693f77544423686b71e65096631cffb7e4cbc9c0efec092de62d8c8b82e3683b80f65ebac06904505c26c4062bee770c375c33fa4c03b723ab42d17064"],
-                           hashtagList: ["피카츄", "이상한 사탕"],
-                           likeUsers: [],
-                           isColleted: false,
-                           comments: [],
-                           content: "오늘은 여행을 떠나는 날",
-                           date: Date().timeIntervalSince1970)
+    let screenSize = UIScreen.main.bounds
     
+    let post : Post
+    
+    @State private var isLiked : Bool = false
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment : .leading) {
+            // MARK: -프로필 이미지와 유저 정보 섹션
+            HStack {
+                AsyncImage(url: URL(string: post.user.imageURL)!) { image in
+                    image
+                        .resizable()
+                        .background(Color.gray)
+                        .clipShape(Circle())
+                        
+                } placeholder: {
+                    ProgressView()
+                }
+                .frame(width: 40, height : 40)
+                
+                VStack(alignment: .leading) {
+                    Text(post.user.userId)
+                    Text(post.place)
+                }
+                .font(.callout)
+                
+                Spacer()
+
+                Button {
+                    
+                } label: {
+                    
+                    VStack(spacing : -25) {
+                        Text(".")
+                        Text(".")
+                        Text(".")
+                    }
+                    .font(.title)
+                    .foregroundColor(.black)
+                    
+                    
+                }
+
+            }
+            
+            // MARK: -Async 이미지 파트
+            TabView {
+                ForEach(post.imageURLList, id: \.self) { urlString in
+                    AsyncImage(url: URL(string: urlString)!) { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            
+                    } placeholder: {
+                        ProgressView()
+                    }
+                    .frame(width : screenSize.width,
+                           height: screenSize.height)
+                    
+                }
+            }
+            .padding(.horizontal, -20)
+            .tabViewStyle(.page(indexDisplayMode: .never))
+            
+            // MARK: -가로 버튼 리스트
+            HStack {
+                Button {
+                    
+                } label: {
+                    Image(systemName: "heart")
+                }
+
+                Button {
+                    
+                } label: {
+                    Image(systemName: "message")
+                }
+                
+                Button {
+                    
+                } label: {
+                    Image(systemName: "airplane")
+                }
+                
+                Spacer()
+                
+                Button {
+                    
+                } label: {
+                    Image(systemName: "bookmark")
+                }
+
+            }
+            .foregroundColor(.black)
+            .font(.title)
+            .padding(.bottom)
+            
+            
+            // MARK: -댓글 파트
+            HStack {
+                
+                ForEach(post.likeUsers) { user in
+                    AsyncImage(url: URL(string: user.imageURL)!) { image in
+                        image
+                            .resizable()
+                            .background(Color.gray)
+                            .clipShape(Circle())
+                    } placeholder: {
+                        ProgressView()
+                    }
+                    .frame(width: 30, height : 30)
+                }
+                
+                    
+                Text("\(post.likeUsers.first!.userId)님 외 \(post.likeUsers.count-1)명이 좋아합니다")
+            }
+            
+            // MARK: -게시물 내용
+            HStack {
+                Text(post.user.userId)
+                    .bold()
+                Text(post.content)
+            }
+            
+            Button("댓글 \(post.comments.count)개 모두 보기") {
+                
+            }
+            
+            ForEach(post.comments) {comment in
+                HStack {
+                    Text(comment.user.userId)
+                        .bold()
+                    Button("@\(comment.targetUser?.userId ?? "nil")") {
+                        
+                    }
+                    Text(comment.content)
+                }
+            }
+            
+        }
+        .padding(20)
+        
     }
 }
 
 struct PostCell_Previews: PreviewProvider {
     static var previews: some View {
-        PostCell()
+        PostCell(post: post)
     }
 }
