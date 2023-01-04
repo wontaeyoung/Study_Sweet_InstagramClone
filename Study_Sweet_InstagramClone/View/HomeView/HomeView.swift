@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @StateObject var postStore : PostStore = PostStore(posts: [post])
+    
+    
+    
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -18,11 +23,27 @@ struct HomeView: View {
                         myProfileStoryButton
                         Spacer()
                     }
+                    .padding(.horizontal, 20)
                     Divider()
                     
+                    
+                    ForEach(postStore.posts) {post in
+                        
+                        PostCell(post: post)
+                            .overlay(alignment : .top) {
+                                NavigationLink {
+                                    PostCell(post: post)
+                                } label: {
+                                    Rectangle()
+                                        .frame(width: 350, height: 50)
+                                        .opacity(0)
+                                }
+                                
+                            }
+                    }
                 }
             }
-            .padding(20)
+            .ignoresSafeArea(edges : .)
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarLeading) {
                     Button {
@@ -32,7 +53,7 @@ struct HomeView: View {
                             .font(.title)
                             .foregroundColor(.black)
                     }
-
+                    
                 }
                 
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
@@ -54,18 +75,18 @@ struct HomeView: View {
                         }
                     }
                     .foregroundColor(.black)
-
+                    
                 }
                 
                 
-
+                
                 
             }
         }
     }
     
     private var myProfileStoryButton : some View {
-         
+        
         Button {
             // 앨범 연결
         } label: {
