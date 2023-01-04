@@ -11,6 +11,7 @@ struct Comment : Identifiable {
     
     // MARK: -Properties
     let id : String = UUID().uuidString
+    let user : User // 댓글 작성 유저
     let superCommentId : String? // 상위 댓글 ID
     let targetUser : User? // 태그 대상 유저
     var likeUsers : [User] // 좋아요 누른 User 리스트
