@@ -11,34 +11,45 @@ struct ContentView: View {
     var body: some View {
         
         
-        NavigationStack {
-            TabView {
+        
+        TabView {
+            NavigationStack {
                 HomeView()
-                    .tabItem {
-                        Image(systemName: "house")
-                    }
-                SearchView()
-                    .tabItem {
-                        Image(systemName: "magnifyingglass")
-                    }
-                
-                ReelsView()
-                    .tabItem {
-                        Image(systemName: "play.rectangle")
-                    }
-                
-                ShopView()
-                    .tabItem {
-                        Image(systemName: "handbag")
-                    }
-                
-                SearchView()
-                    .tabItem {
-                        Image(systemName: "person.circle")
-                    }
-                
             }
+            .tabItem {
+                Image(systemName: "house")
+            }
+            
+            NavigationStack {
+                SearchView()
+            }
+            .tabItem {
+                Image(systemName: "magnifyingglass")
+            }
+            
+            NavigationStack {
+                ReelsView()
+            }
+            .tabItem {
+                Image(systemName: "play.rectangle")
+            }
+            
+            NavigationStack {
+                ShopView()
+            }
+            .tabItem {
+                Image(systemName: "handbag")
+            }
+            
+            NavigationStack {
+                SearchView()
+            }
+            .tabItem {
+                Image(systemName: "person.circle")
+            }
+            
         }
+        
          
     }
 }

@@ -24,6 +24,7 @@
 		6E1ECD11295EF3A70013E298 /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1ECD10295EF3A70013E298 /* ShopView.swift */; };
 		6E1ECD13295EF3AC0013E298 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1ECD12295EF3AC0013E298 /* ProfileView.swift */; };
 		6E3B99F5296D9F9200183B6C /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3B99F4296D9F9200183B6C /* Modifiers.swift */; };
+		6E91FA712986B4B900207F2C /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E91FA702986B4B900207F2C /* Utility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		6E1ECD10295EF3A70013E298 /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
 		6E1ECD12295EF3AC0013E298 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		6E3B99F4296D9F9200183B6C /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
+		6E91FA702986B4B900207F2C /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +60,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6E161ECA29645BF500221A14 /* HomeView */ = {
+		6E161ECA29645BF500221A14 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				6E1ECD0A295EF20B0013E298 /* HomeView.swift */,
 				6E161ECB29645C0700221A14 /* PostCell.swift */,
 			);
-			path = HomeView;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		6E1ECCED295EEBD80013E298 = {
@@ -86,8 +88,8 @@
 		6E1ECCF8295EEBD80013E298 /* Study_Sweet_InstagramClone */ = {
 			isa = PBXGroup;
 			children = (
+				6E91FA6F2986AD0B00207F2C /* App */,
 				6E3B99F3296D9F7D00183B6C /* UIConfig */,
-				6E1ECCF9295EEBD80013E298 /* Study_Sweet_InstagramCloneApp.swift */,
 				6E1ECD09295EEF1A0013E298 /* Model */,
 				6E1ECD08295EEF110013E298 /* ViewModel */,
 				6E1ECD07295EEF010013E298 /* View */,
@@ -108,10 +110,10 @@
 		6E1ECD07295EEF010013E298 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6E3B99F2296D9EB900183B6C /* ProfileView */,
-				6E161ECA29645BF500221A14 /* HomeView */,
 				6E1ECCFB295EEBD80013E298 /* ContentView.swift */,
-				6E1ECD0C295EF21D0013E298 /* SearchView.swift */,
+				6E91FA6E2986ACFD00207F2C /* Search */,
+				6E3B99F2296D9EB900183B6C /* Profile */,
+				6E161ECA29645BF500221A14 /* Home */,
 				6E1ECD0E295EF39B0013E298 /* ReelsView.swift */,
 				6E1ECD10295EF3A70013E298 /* ShopView.swift */,
 				6E161EBE2961CDDD00221A14 /* MarginView.swift */,
@@ -138,20 +140,37 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		6E3B99F2296D9EB900183B6C /* ProfileView */ = {
+		6E3B99F2296D9EB900183B6C /* Profile */ = {
 			isa = PBXGroup;
 			children = (
 				6E1ECD12295EF3AC0013E298 /* ProfileView.swift */,
 			);
-			path = ProfileView;
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		6E3B99F3296D9F7D00183B6C /* UIConfig */ = {
 			isa = PBXGroup;
 			children = (
 				6E3B99F4296D9F9200183B6C /* Modifiers.swift */,
+				6E91FA702986B4B900207F2C /* Utility.swift */,
 			);
 			path = UIConfig;
+			sourceTree = "<group>";
+		};
+		6E91FA6E2986ACFD00207F2C /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				6E1ECD0C295EF21D0013E298 /* SearchView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		6E91FA6F2986AD0B00207F2C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				6E1ECCF9295EEBD80013E298 /* Study_Sweet_InstagramCloneApp.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +255,7 @@
 				6E1ECCFC295EEBD80013E298 /* ContentView.swift in Sources */,
 				6E161EC9296456D200221A14 /* Comment.swift in Sources */,
 				6E161EC12961ED8B00221A14 /* NavigationTitleView.swift in Sources */,
+				6E91FA712986B4B900207F2C /* Utility.swift in Sources */,
 				6E1ECD13295EF3AC0013E298 /* ProfileView.swift in Sources */,
 				6E161EC5296452AE00221A14 /* User.swift in Sources */,
 				6E1ECCFA295EEBD80013E298 /* Study_Sweet_InstagramCloneApp.swift in Sources */,
