@@ -43,7 +43,6 @@ struct HomeView: View {
                     }
                 }
             }
-            .ignoresSafeArea(edges : .)
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarLeading) {
                     Button {
@@ -75,18 +74,12 @@ struct HomeView: View {
                         }
                     }
                     .foregroundColor(.black)
-                    
                 }
-                
-                
-                
-                
             }
         }
     }
-    
+
     private var myProfileStoryButton : some View {
-        
         Button {
             // 앨범 연결
         } label: {
@@ -105,7 +98,6 @@ struct HomeView: View {
                                 .foregroundColor(.white)
                         }
                     }
-                
                 Text("내 스토리")
                     .fontWeight(.semibold)
             }
