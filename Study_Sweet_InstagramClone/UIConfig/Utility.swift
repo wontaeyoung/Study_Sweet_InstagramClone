@@ -14,4 +14,12 @@ enum Utility {
         return (bounds.width, bounds.height)
     }
     
+    static var imageWidth : CGFloat {
+        return UIScreen.main.bounds.width / 3
+    }
+    
+    static var maximumGridCount : Int {
+        return 200
+    }
+    
 }
