@@ -25,6 +25,8 @@
 		6E1ECD13295EF3AC0013E298 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1ECD12295EF3AC0013E298 /* ProfileView.swift */; };
 		6E3B99F5296D9F9200183B6C /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3B99F4296D9F9200183B6C /* Modifiers.swift */; };
 		6E91FA712986B4B900207F2C /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E91FA702986B4B900207F2C /* Utility.swift */; };
+		6E91FA732986C53D00207F2C /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E91FA722986C53D00207F2C /* ImageCell.swift */; };
+		6E91FA752986C59600207F2C /* OverlayModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E91FA742986C59600207F2C /* OverlayModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		6E1ECD12295EF3AC0013E298 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		6E3B99F4296D9F9200183B6C /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		6E91FA702986B4B900207F2C /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		6E91FA722986C53D00207F2C /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		6E91FA742986C59600207F2C /* OverlayModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +165,8 @@
 			isa = PBXGroup;
 			children = (
 				6E1ECD0C295EF21D0013E298 /* SearchView.swift */,
+				6E91FA722986C53D00207F2C /* ImageCell.swift */,
+				6E91FA742986C59600207F2C /* OverlayModifier.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -246,9 +252,11 @@
 				6E1ECD11295EF3A70013E298 /* ShopView.swift in Sources */,
 				6E161ECE29645C1900221A14 /* PostStore.swift in Sources */,
 				6E161EC72964533000221A14 /* Post.swift in Sources */,
+				6E91FA752986C59600207F2C /* OverlayModifier.swift in Sources */,
 				6E161ECC29645C0700221A14 /* PostCell.swift in Sources */,
 				6E3B99F5296D9F9200183B6C /* Modifiers.swift in Sources */,
 				6E1ECD0D295EF21D0013E298 /* SearchView.swift in Sources */,
+				6E91FA732986C53D00207F2C /* ImageCell.swift in Sources */,
 				6E1ECD0F295EF39B0013E298 /* ReelsView.swift in Sources */,
 				6E1ECD0B295EF20B0013E298 /* HomeView.swift in Sources */,
 				6E161EBF2961CDDD00221A14 /* MarginView.swift in Sources */,
