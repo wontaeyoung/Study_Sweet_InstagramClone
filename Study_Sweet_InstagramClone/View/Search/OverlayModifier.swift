@@ -12,18 +12,22 @@ struct OverlayModifier : ViewModifier {
     
     func body(content: Content) -> some View {
         content
-            .overlay(alignment : .top) {
+            .overlay(alignment: .top) {
                 if isShorts {
-                    Color.orange
+                    Rectangle()
                         .frame(minHeight : Utility.imageWidth * 2)
+                        .foregroundColor(.orange)
+                        .overlay(alignment: .bottomLeading) {
+                            Image(systemName: "play.rectangle.fill")
+                                .foregroundColor(.white)
+                        }
                 }
             }
-            .overlay(alignment : isShorts
-                     ? .bottomLeading
-                     : .topTrailing) {
-                Image(systemName: isShorts
-                      ? "play.rectangle.fill"
-                      : "square.on.square.fill")
+            .overlay(alignment: .topTrailing) {
+                if !isShorts {
+                    Image(systemName: "square.on.square.fill")
+                        .foregroundColor(.white)
+                }
             }
     }
 }
