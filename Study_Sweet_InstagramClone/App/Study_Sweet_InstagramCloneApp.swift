@@ -12,6 +12,7 @@ struct Study_Sweet_InstagramCloneApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(SearchStore())
         }
     }
 }
