@@ -12,11 +12,18 @@ struct ImageCell : View {
     let index : Int
     
     var body: some View {
-        Color.gray
-            .frame(minHeight: Utility.imageWidth)
-            .border(.black)
-            .overlay {
-                Text("\(index)")
-            }
+        
+        NavigationLink {
+            Text("Image에 해당하는 Post")
+        } label: {
+            Color.gray
+                .frame(minHeight: Utility.imageWidth)
+                .border(.black)
+                .overlay {
+                    Text("\(index)")
+                        .foregroundColor(.black)
+                }
+        }
+        
     }
 }
