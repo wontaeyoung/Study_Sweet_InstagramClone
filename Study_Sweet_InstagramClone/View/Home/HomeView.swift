@@ -102,7 +102,7 @@ struct HomeView: View {
                 Text("내 스토리")
                     .fontWeight(.semibold)
             }
-            .foregroundColor(.black)
+            .foregroundColor(.primary)
         }
         
     }
