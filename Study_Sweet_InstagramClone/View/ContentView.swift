@@ -9,9 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        
-        
-        
         TabView {
             NavigationStack {
                 HomeView()
@@ -42,15 +39,12 @@ struct ContentView: View {
             }
             
             NavigationStack {
-                SearchView()
+                ProfileView()
             }
             .tabItem {
                 Image(systemName: "person.circle")
             }
-            
         }
-        
-         
     }
 }
 
